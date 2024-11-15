@@ -17,6 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
+
+
+    
     // ป้องกัน SQL Injection
     $user = $conn->real_escape_string($user);
     $pass = $conn->real_escape_string($pass);
