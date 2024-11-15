@@ -2,7 +2,7 @@
 // เริ่ม session เพื่อเก็บข้อมูลการ login
 ob_start(); // เปิดการใช้งาน output buffering
 session_start();
-
+//////////////////////////////////////////////////////////////////
 // ตรวจสอบว่ามีการเชื่อมต่อฐานข้อมูลหรือไม่
 include 'connect/mysql_studentsatit.php';
 
@@ -19,14 +19,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    
+
     // ป้องกัน SQL Injection
     $user = $conn->real_escape_string($user);
     $pass = $conn->real_escape_string($pass);
 
     // สอบถามข้อมูลจากฐานข้อมูล
     // $sql = "SELECT * FROM studentsatit.detail_std WHERE std_id = '$user' AND std_ipasspass = '$pass'";
-     $sql = "SELECT * FROM studentsatit.detail_std WHERE std_id = '$user'";
+    $sql = "SELECT * FROM studentsatit.detail_std WHERE std_id = '$user'";
     $result = $conn->query($sql);
 
     // ตรวจสอบผลลัพธ์
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    
+
 
 }
 ?>
